@@ -65,7 +65,7 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
   && apk del .build-deps-yarn
 
-ENV OPENEATS_VERSION=1.4.0 \
+ENV OPENEATS_VERSION=1.5.1 \
     PATH=/usr/local/bin:$PATH \
     # nginx config
     API_HOST=0.0.0.0 \
@@ -105,7 +105,7 @@ RUN apk add --update-cache --update --virtual builddeps \
         mariadb-dev \
         python3 && \
     cd /tmp && \
-    wget -O openeats-web.tar.gz "https://github.com/open-eats/openeats-web/archive/$OPENEATS_VERSION.tar.gz" && \
+    wget -O openeats-web.tar.gz "https://github.com/tekand/openeats-web/archive/T$OPENEATS_VERSION.tar.gz" && \
     wget -O openeats-api.tar.gz "https://github.com/open-eats/openeats-api/archive/$OPENEATS_VERSION.tar.gz" && \
     tar -xzf openeats-web.tar.gz && rm openeats-web.tar.gz && mv openeats-web-$OPENEATS_VERSION /openeats-web && \
     tar -xzf openeats-api.tar.gz && rm openeats-api.tar.gz && mv openeats-api-$OPENEATS_VERSION /code && \
