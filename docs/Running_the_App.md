@@ -52,6 +52,13 @@ E.g. Given that the IP address for the OpenEats server is `192.168.0.12` and por
 
 ``NODE_API_URL=http://192.168.0.1:1234``
 
+##### Note For LAN/Internet or static IP hosting 
+If you are going to be hosting OpenEats from LAN/intranet or a static IP then you should double check two things within your environment file. 
+
+Given that the IP address for the OpenEats server is `192.168.0.1` and port is `1234`.
+1. Confirm that `ALLOWED_HOST=192.168.0.1`
+2. Confirm that `NODE_API_URL=http://192.168.0.1:1234`
+
 #### Connecting to a remote DB
 If you are connecting the API to a remote DB (any non-dockerized DB) you need to setup the following configs to your env file.
 
