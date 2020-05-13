@@ -87,7 +87,7 @@ ENV OPENEATS_VERSION=1.5.1 \
     # Node config
     NODE_ENV=production \
     NODE_URL=localhost:8080 \
-    NODE_LOCALE=en
+    NODE_LOCALE=hu
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY start.sh create-database.sh /startup/
@@ -107,10 +107,10 @@ RUN apk add --update-cache --update --virtual builddeps \
         mariadb \
         python3 && \
     cd /tmp && \
-    wget -O openeats-web.tar.gz "https://github.com/tekand/openeats-web/archive/T$OPENEATS_VERSION.tar.gz" && \
-    wget -O openeats-api.tar.gz "https://github.com/open-eats/openeats-api/archive/$OPENEATS_VERSION.tar.gz" && \
-    tar -xzf openeats-web.tar.gz && rm openeats-web.tar.gz && mv openeats-web-$OPENEATS_VERSION /openeats-web && \
-    tar -xzf openeats-api.tar.gz && rm openeats-api.tar.gz && mv openeats-api-$OPENEATS_VERSION /code && \
+    wget -O openeats-web.tar.gz "https://github.com/tekand/openeats-web/archive/master.tar.gz" && \
+    wget -O openeats-api.tar.gz "https://github.com/tekand/openeats-api/archive/master.tar.gz" && \
+    tar -xzf openeats-web.tar.gz && rm openeats-web.tar.gz && mv openeats-web-master /openeats-web && \
+    tar -xzf openeats-api.tar.gz && rm openeats-api.tar.gz && mv openeats-api-master /code && \
     mkdir -p /var/www/html/openeats-static /code/static-files /code/site-media && \
     ln -s /code/static-files /var/www/html/openeats-static/ && \
     ln -s /code/site-media /var/www/html/openeats-static/ && \
