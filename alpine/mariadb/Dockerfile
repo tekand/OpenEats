@@ -105,6 +105,7 @@ RUN apk add --update-cache --update --virtual builddeps \
     apk add --update-cache --update \
         mariadb-dev \
         mariadb \
+        mariadb-client \
         python3 && \
     cd /tmp && \
     wget -O openeats-web.tar.gz "https://github.com/tekand/openeats-web/archive/master.tar.gz" && \
